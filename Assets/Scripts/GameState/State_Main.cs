@@ -5,7 +5,9 @@ namespace FlipFlop
 {
     public class State_Main : GameStateBase
     {
+        [SerializeField] private Text levelNumberText;
         [SerializeField] private Button playButton;
+      
 
         public override void Init()
         {

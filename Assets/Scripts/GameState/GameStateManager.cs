@@ -5,6 +5,9 @@ public class GameStateManager : MonoBehaviour
 {
     [SerializeField] private State_Main mainMenu;
     [SerializeField] private State_Playing playing;
+    [SerializeField] private State_Win win;
+    [SerializeField] private State_Lose lose;
+
 
     private void Start()
     {
@@ -17,6 +20,8 @@ public class GameStateManager : MonoBehaviour
         mainMenu.Init();
 
         playing.Hide();
+        lose.Hide();
+        win.Hide();
     }
 
     public void SetupGamePanel()
@@ -25,7 +30,30 @@ public class GameStateManager : MonoBehaviour
         playing.Init();
 
         mainMenu.Hide();
+        lose.Hide();
+        win.Hide();
     }
+
+    public void WinGame()
+    {
+        win.Show();
+        win.Init();
+
+        playing.Hide();
+        lose.Show();
+        mainMenu.Hide();
+    }
+
+    public void LoseGame()
+    {
+        lose.Show();
+        lose.Init();
+
+        playing.Hide();
+        win.Show();
+        mainMenu.Hide();
+    }
+
 
     ///////////////////////////////////////
     /// STATIC MEMEBERS
