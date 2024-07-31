@@ -1,9 +1,7 @@
-
 using UnityEngine;
 
 namespace FlipFlop
 {
-
     [CreateAssetMenu(fileName = "New Level", menuName = "MatchingCard/Creaet New Level", order = 0)]
     public class LevelConfig : ScriptableObject
     {

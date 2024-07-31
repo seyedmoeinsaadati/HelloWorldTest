@@ -1,4 +1,5 @@
 using FlipFlop;
+using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class CardMatchingGameHandler : MonoBehaviour
@@ -19,11 +20,10 @@ public class CardMatchingGameHandler : MonoBehaviour
 
         GameStateManager.Instance.OpenGamePanel();
 
-
         GameInfo.levelNumber = PlayerProfile.LevelIndex;
-        // load level
-        // load game board
-        // start game
+
+        LoadLevel();
+        GameStateManager.Instance.OpenGamePanel();
     }
 
     public static void GameFinished(bool winner)
@@ -43,6 +43,10 @@ public class CardMatchingGameHandler : MonoBehaviour
 
     public static void LoadLevel()
     {
+        var config = Factory.GetLevel(GameInfo.levelNumber);
+        GameInfo.time = config.timeLimit;
+
+        // spawn cards
 
     }
 
