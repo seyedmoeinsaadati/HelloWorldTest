@@ -11,11 +11,6 @@ namespace FlipFlop
             view.onHomeClicked += OnBackMenu;
         }
 
-        public override void Init()
-        {
-            // TODO: start game
-        }
-
         public void UpdateTime()
         {
             // view.UpdateTime();
@@ -38,13 +33,29 @@ namespace FlipFlop
 
         public void OnBackMenu()
         {
-            GameStateManager.Instance.SetupMainMenu();
+            GameStateManager.Instance.OpenMainMenu();
         }
 
         private void OnDestroy()
         {
             view.onHomeClicked -= OnBackMenu;
         }
+
+#if UNITY_EDITOR
+
+        // For test in editor (win/lose)
+        private void Update()
+        {
+            if (Input.GetKeyUp(KeyCode.W))
+            {
+                CardMatchingGame.GameFinished(true);
+            }
+            else if (Input.GetKeyUp(KeyCode.Q))
+            {
+                CardMatchingGame.GameFinished(false);
+            }
+        }
+#endif
 
     }
 }
