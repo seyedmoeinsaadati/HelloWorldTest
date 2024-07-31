@@ -1,0 +1,1378 @@
+fileFormatVersion: 2
+guid: cf1aa75b10d863944b0a377fcaf301b8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7627042682197689923
+    second: easy_0
+  - first:
+      213: -3339108284908528200
+    second: easy_1
+  - first:
+      213: 4997450685464569122
+    second: Mobile - Candy Crush Saga - Candies_2
+  - first:
+      213: -6068889638408004480
+    second: Mobile - Candy Crush Saga - Candies_3
+  - first:
+      213: -9176876833401639937
+    second: Mobile - Candy Crush Saga - Candies_4
+  - first:
+      213: 6940942597434848906
+    second: Mobile - Candy Crush Saga - Candies_5
+  - first:
+      213: 8426500669799665344
+    second: Mobile - Candy Crush Saga - Candies_6
+  - first:
+      213: 6350070346108479749
+    second: Mobile - Candy Crush Saga - Candies_7
+  - first:
+      213: 4935910263411564094
+    second: Mobile - Candy Crush Saga - Candies_8
+  - first:
+      213: 4995994248114973739
+    second: Mobile - Candy Crush Saga - Candies_9
+  - first:
+      213: -7594264100565804898
+    second: Mobile - Candy Crush Saga - Candies_10
+  - first:
+      213: -4579093889306986013
+    second: Mobile - Candy Crush Saga - Candies_11
+  - first:
+      213: 5391806060690072626
+    second: Mobile - Candy Crush Saga - Candies_12
+  - first:
+      213: 2233576674400788108
+    second: Mobile - Candy Crush Saga - Candies_13
+  - first:
+      213: 8676881454637972562
+    second: Mobile - Candy Crush Saga - Candies_14
+  - first:
+      213: -1852129042768986821
+    second: Mobile - Candy Crush Saga - Candies_15
+  - first:
+      213: -9212786921777406115
+    second: Mobile - Candy Crush Saga - Candies_16
+  - first:
+      213: -3102474647922845539
+    second: Mobile - Candy Crush Saga - Candies_17
+  - first:
+      213: 3357000650902913151
+    second: Mobile - Candy Crush Saga - Candies_18
+  - first:
+      213: 4564826757749635700
+    second: Mobile - Candy Crush Saga - Candies_19
+  - first:
+      213: -6478770447850040902
+    second: Mobile - Candy Crush Saga - Candies_20
+  - first:
+      213: -3208766759714184297
+    second: Mobile - Candy Crush Saga - Candies_21
+  - first:
+      213: -4371460461319170868
+    second: easy_2
+  - first:
+      213: -2976579181274591570
+    second: easy_3
+  - first:
+      213: 3957038895654511201
+    second: Mobile - Candy Crush Saga - Candies_24
+  - first:
+      213: 2029422921145082616
+    second: Mobile - Candy Crush Saga - Candies_25
+  - first:
+      213: 5965933849295630438
+    second: Mobile - Candy Crush Saga - Candies_26
+  - first:
+      213: -3394549196830584182
+    second: Mobile - Candy Crush Saga - Candies_27
+  - first:
+      213: 1984659283627659631
+    second: Mobile - Candy Crush Saga - Candies_28
+  - first:
+      213: -2309070527805750121
+    second: Mobile - Candy Crush Saga - Candies_29
+  - first:
+      213: -8058504593127725670
+    second: hard_1
+  - first:
+      213: 1536651608146813537
+    second: Mobile - Candy Crush Saga - Candies_31
+  - first:
+      213: 625073180970282989
+    second: Mobile - Candy Crush Saga - Candies_32
+  - first:
+      213: -2154980930208525237
+    second: Mobile - Candy Crush Saga - Candies_33
+  - first:
+      213: 7525686757984312994
+    second: hard_0
+  - first:
+      213: -168930320930826204
+    second: easy_4
+  - first:
+      213: 8475125128889817748
+    second: easy_5
+  - first:
+      213: -2871261569100481139
+    second: Mobile - Candy Crush Saga - Candies_37
+  - first:
+      213: -9098984479692456803
+    second: Mobile - Candy Crush Saga - Candies_38
+  - first:
+      213: -4224503286839713327
+    second: Mobile - Candy Crush Saga - Candies_39
+  - first:
+      213: 7649076093902921551
+    second: hard_4
+  - first:
+      213: 5932141047482021575
+    second: Mobile - Candy Crush Saga - Candies_41
+  - first:
+      213: 8051812277413882408
+    second: Mobile - Candy Crush Saga - Candies_42
+  - first:
+      213: 4666399918062537429
+    second: Mobile - Candy Crush Saga - Candies_43
+  - first:
+      213: -8997159455093333822
+    second: hard_2
+  - first:
+      213: 216860278827289931
+    second: hard_3
+  - first:
+      213: -5829018517252737859
+    second: easy_6
+  - first:
+      213: -1087788119630267120
+    second: easy_7
+  - first:
+      213: 389275415136237498
+    second: easy_8
+  - first:
+      213: 8805763007280004672
+    second: Mobile - Candy Crush Saga - Candies_49
+  - first:
+      213: -2848477360553034789
+    second: Mobile - Candy Crush Saga - Candies_50
+  - first:
+      213: -6000107306716486622
+    second: Mobile - Candy Crush Saga - Candies_51
+  - first:
+      213: 9134594050990519411
+    second: Mobile - Candy Crush Saga - Candies_52
+  - first:
+      213: -5850013816318054815
+    second: hard_5
+  - first:
+      213: -1016662155951827311
+    second: hard_6
+  - first:
+      213: 6013289927185268939
+    second: hard_7
+  - first:
+      213: -5632369336870817814
+    second: Mobile - Candy Crush Saga - Candies_56
+  - first:
+      213: 8354889955755021297
+    second: Mobile - Candy Crush Saga - Candies_57
+  - first:
+      213: 1373495451259971311
+    second: Mobile - Candy Crush Saga - Candies_58
+  - first:
+      213: -5349063006533924247
+    second: hard_8
+  - first:
+      213: 8367298719128806563
+    second: Mobile - Candy Crush Saga - Candies_60
+  - first:
+      213: 7346467378814838452
+    second: Mobile - Candy Crush Saga - Candies_61
+  - first:
+      213: -1446578936423642155
+    second: easy_9
+  - first:
+      213: -2456244641347471159
+    second: easy_10
+  - first:
+      213: -6086426521650346670
+    second: easy_11
+  - first:
+      213: -365535695600926130
+    second: Mobile - Candy Crush Saga - Candies_65
+  - first:
+      213: -8524140183301193398
+    second: Mobile - Candy Crush Saga - Candies_66
+  - first:
+      213: -2213958634121367904
+    second: Mobile - Candy Crush Saga - Candies_67
+  - first:
+      213: 1531342972051016960
+    second: Mobile - Candy Crush Saga - Candies_68
+  - first:
+      213: 5923684794752432030
+    second: Mobile - Candy Crush Saga - Candies_69
+  - first:
+      213: 4666191594624270512
+    second: hard_9
+  - first:
+      213: 3831904982217231778
+    second: hard_10
+  - first:
+      213: 6374438136090936576
+    second: medium_0
+  - first:
+      213: -2235525446399533615
+    second: medium_1
+  - first:
+      213: -620111437101752264
+    second: medium_2
+  - first:
+      213: 3244300156973347582
+    second: Mobile - Candy Crush Saga - Candies_75
+  - first:
+      213: 2859918752577358789
+    second: Mobile - Candy Crush Saga - Candies_76
+  - first:
+      213: -9156247361620772690
+    second: Mobile - Candy Crush Saga - Candies_77
+  - first:
+      213: -5007870833874926925
+    second: Mobile - Candy Crush Saga - Candies_78
+  - first:
+      213: -6374384378867819259
+    second: hard_11
+  - first:
+      213: 6459697698502466544
+    second: Mobile - Candy Crush Saga - Candies_80
+  - first:
+      213: 3156599693022668388
+    second: Mobile - Candy Crush Saga - Candies_81
+  - first:
+      213: 6105528037299861239
+    second: Mobile - Candy Crush Saga - Candies_82
+  - first:
+      213: -1960479024523591515
+    second: medium_3
+  - first:
+      213: 4082292692885251913
+    second: medium_4
+  - first:
+      213: 9079066195508844983
+    second: medium_5
+  - first:
+      213: 828320268919511535
+    second: Mobile - Candy Crush Saga - Candies_86
+  - first:
+      213: 2593099256817241219
+    second: Mobile - Candy Crush Saga - Candies_87
+  - first:
+      213: 3869723308791803655
+    second: Mobile - Candy Crush Saga - Candies_88
+  - first:
+      213: -8514506897042505891
+    second: Mobile - Candy Crush Saga - Candies_89
+  - first:
+      213: 6226122718911162710
+    second: Mobile - Candy Crush Saga - Candies_90
+  - first:
+      213: 436853733084393697
+    second: Mobile - Candy Crush Saga - Candies_91
+  - first:
+      213: -4439685986563552174
+    second: Mobile - Candy Crush Saga - Candies_92
+  - first:
+      213: 2687684773660596753
+    second: Mobile - Candy Crush Saga - Candies_93
+  - first:
+      213: 1892648460757758109
+    second: medium_6
+  - first:
+      213: -4033205722745490745
+    second: medium_7
+  - first:
+      213: 5081359168789502497
+    second: medium_8
+  - first:
+      213: 7346577642534841317
+    second: Mobile - Candy Crush Saga - Candies_97
+  - first:
+      213: 1774123875673040827
+    second: Mobile - Candy Crush Saga - Candies_98
+  - first:
+      213: 3103422777896396053
+    second: Mobile - Candy Crush Saga - Candies_99
+  - first:
+      213: -4725134675072781044
+    second: Mobile - Candy Crush Saga - Candies_100
+  - first:
+      213: -3705267633268041374
+    second: Mobile - Candy Crush Saga - Candies_101
+  - first:
+      213: -1745021683504332687
+    second: Mobile - Candy Crush Saga - Candies_102
+  - first:
+      213: -7061251256021749156
+    second: Mobile - Candy Crush Saga - Candies_103
+  - first:
+      213: 6934576376358182171
+    second: Mobile - Candy Crush Saga - Candies_104
+  - first:
+      213: -6257467903825744772
+    second: medium_9
+  - first:
+      213: 9111282963623214488
+    second: medium_10
+  - first:
+      213: -4368423876359350738
+    second: medium_11
+  - first:
+      213: 8628346337699684130
+    second: Mobile - Candy Crush Saga - Candies_108
+  - first:
+      213: 7244176892201011451
+    second: Mobile - Candy Crush Saga - Candies_109
+  - first:
+      213: 979185612118972400
+    second: Mobile - Candy Crush Saga - Candies_110
+  - first:
+      213: -1400736004514981795
+    second: Mobile - Candy Crush Saga - Candies_111
+  - first:
+      213: -2336646967586923544
+    second: Mobile - Candy Crush Saga - Candies_112
+  - first:
+      213: -3376369063314171934
+    second: Mobile - Candy Crush Saga - Candies_113
+  - first:
+      213: 7787039493926769425
+    second: Mobile - Candy Crush Saga - Candies_114
+  - first:
+      213: -3343464148412765687
+    second: Mobile - Candy Crush Saga - Candies_115
+  - first:
+      213: 1432243204783456310
+    second: Mobile - Candy Crush Saga - Candies_116
+  - first:
+      213: -3366272070310193754
+    second: a_0
+  - first:
+      213: -2950404794562567556
+    second: a_1
+  - first:
+      213: -4270568704031372093
+    second: c_0
+  - first:
+      213: 4021529228669620822
+    second: c_1
+  - first:
+      213: 4368691214187244376
+    second: c_3
+  - first:
+      213: 7823868324299840833
+    second: c_4
+  - first:
+      213: 6996086087865132247
+    second: c_5
+  - first:
+      213: 8773581462335657501
+    second: a_2
+  - first:
+      213: 4708240527115601691
+    second: a_3
+  - first:
+      213: -4604040569129139920
+    second: c_7
+  - first:
+      213: 2437480088640762956
+    second: c_6
+  - first:
+      213: -7446169006245341257
+    second: a_4
+  - first:
+      213: 609854788576254686
+    second: a_5
+  - first:
+      213: -7506820496201924048
+    second: c_10
+  - first:
+      213: 4078496974052989320
+    second: c_8
+  - first:
+      213: -4420442394502915500
+    second: c_9
+  - first:
+      213: -4011929952422433431
+    second: a_6
+  - first:
+      213: 7306935602051371684
+    second: a_7
+  - first:
+      213: -6024461442127793037
+    second: a_8
+  - first:
+      213: -8414973272706400027
+    second: c_11
+  - first:
+      213: 6534240808150530198
+    second: a_9
+  - first:
+      213: 9100959518403565972
+    second: a_10
+  - first:
+      213: 2997295189601833544
+    second: a_11
+  - first:
+      213: -7592838158010662113
+    second: b_0
+  - first:
+      213: 3616961474735916410
+    second: b_3
+  - first:
+      213: -8360087519092435820
+    second: b_6
+  - first:
+      213: 6357555295646397478
+    second: b_9
+  - first:
+      213: 7496760564456214433
+    second: b_1
+  - first:
+      213: 4832464984297044738
+    second: b_4
+  - first:
+      213: 8691875042602769528
+    second: b_7
+  - first:
+      213: -3692248154774900248
+    second: b_10
+  - first:
+      213: 2930585123764836971
+    second: b_2
+  - first:
+      213: 7876811687575642601
+    second: b_5
+  - first:
+      213: -2842195375410261306
+    second: b_8
+  - first:
+      213: -2350908087567574523
+    second: b_11
+  - first:
+      213: -3032129168011833662
+    second: c_2
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: a_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 881
+        width: 156
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a597d723699841d0800000000000000
+      internalID: -3366272070310193754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 882
+        width: 155
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c722d74a87e0e07d0800000000000000
+      internalID: -2950404794562567556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: c_0
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 931
+        width: 106
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cc4f4fd364ebb4c0800000000000000
+      internalID: -4270568704031372093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: c_1
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 934
+        width: 103
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65214b8c6875fc730800000000000000
+      internalID: 4021529228669620822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: c_3
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 837
+        width: 106
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b20035385b0ac30800000000000000
+      internalID: 4368691214187244376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: c_4
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 839
+        width: 103
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14d925fc9c6f39c60800000000000000
+      internalID: 7823868324299840833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: c_5
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 832
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d4e045ea37171160800000000000000
+      internalID: 6996086087865132247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 738
+        width: 155
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1618760bd502c970800000000000000
+      internalID: 8773581462335657501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_3
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 739
+        width: 155
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b17c2d760d7075140800000000000000
+      internalID: 4708240527115601691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: c_7
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 742
+        width: 102
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0310291ee792b10c0800000000000000
+      internalID: -4604040569129139920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: c_6
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 715
+        width: 106
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c44358ee93ba3d120800000000000000
+      internalID: 2437480088640762956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 597
+        width: 153
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b719358db4e9a890800000000000000
+      internalID: -7446169006245341257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_5
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 597
+        width: 155
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eda98a5f2b3a67800800000000000000
+      internalID: 609854788576254686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: c_10
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 653
+        width: 102
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0324343188a62d790800000000000000
+      internalID: -7506820496201924048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: c_8
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 623
+        width: 103
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8891feb936bb99830800000000000000
+      internalID: 4078496974052989320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: c_9
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 624
+        width: 103
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45a939d001f67a2c0800000000000000
+      internalID: -4420442394502915500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 490
+        width: 96
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d6c12e6f2c258c0800000000000000
+      internalID: -4011929952422433431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_7
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 490
+        width: 82
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a25dec5733776560800000000000000
+      internalID: 7306935602051371684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_8
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 491
+        width: 109
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3747fe2cc30d46ca0800000000000000
+      internalID: -6024461442127793037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: c_11
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 532
+        width: 103
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e0cde59462083b80800000000000000
+      internalID: -8414973272706400027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_9
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 382
+        width: 88
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6987ca625694eaa50800000000000000
+      internalID: 6534240808150530198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_10
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 387
+        width: 101
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49997a9867a1d4e70800000000000000
+      internalID: 9100959518403565972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a_11
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 388
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84254373818889920800000000000000
+      internalID: 2997295189601833544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 283
+        width: 88
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f134eb28ce1d0a690800000000000000
+      internalID: -7592838158010662113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b_3
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 288
+        width: 101
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7548eb3c47023230800000000000000
+      internalID: 3616961474735916410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b_6
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 290
+        width: 101
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 494915de1b00bfb80800000000000000
+      internalID: -8360087519092435820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b_9
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 293
+        width: 101
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62438ec8bd29a3850800000000000000
+      internalID: 6357555295646397478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b_1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 184
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1afc19a8308d90860800000000000000
+      internalID: 7496760564456214433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b_4
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 188
+        width: 89
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20bf98abc4d501340800000000000000
+      internalID: 4832464984297044738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b_7
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 191
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87cdb6abc4ebf9870800000000000000
+      internalID: 8691875042602769528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b_10
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 190
+        width: 89
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e1fc089ddf72ccc0800000000000000
+      internalID: -3692248154774900248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b_2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 86
+        width: 95
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6a1c06a4a78ba820800000000000000
+      internalID: 2930585123764836971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b_5
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 89
+        width: 75
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e167982f7e005d60800000000000000
+      internalID: 7876811687575642601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b_8
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 92
+        width: 95
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c2d96a5d5e7e88d0800000000000000
+      internalID: -2842195375410261306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: b_11
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 92
+        width: 95
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50a11fccc85ef5fd0800000000000000
+      internalID: -2350908087567574523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: c_2
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 533
+        width: 108
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cecd8b2696bbe5d0800000000000000
+      internalID: -3032129168011833662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 74b898e98521e424eb952b4b434774ee
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      a_0: -3366272070310193754
+      a_1: -2950404794562567556
+      a_10: 9100959518403565972
+      a_11: 2997295189601833544
+      a_2: 8773581462335657501
+      a_3: 4708240527115601691
+      a_4: -7446169006245341257
+      a_5: 609854788576254686
+      a_6: -4011929952422433431
+      a_7: 7306935602051371684
+      a_8: -6024461442127793037
+      a_9: 6534240808150530198
+      b_0: -7592838158010662113
+      b_1: 7496760564456214433
+      b_10: -3692248154774900248
+      b_11: -2350908087567574523
+      b_2: 2930585123764836971
+      b_3: 3616961474735916410
+      b_4: 4832464984297044738
+      b_5: 7876811687575642601
+      b_6: -8360087519092435820
+      b_7: 8691875042602769528
+      b_8: -2842195375410261306
+      b_9: 6357555295646397478
+      c_0: -4270568704031372093
+      c_1: 4021529228669620822
+      c_10: -7506820496201924048
+      c_11: -8414973272706400027
+      c_2: -3032129168011833662
+      c_3: 4368691214187244376
+      c_4: 7823868324299840833
+      c_5: 6996086087865132247
+      c_6: 2437480088640762956
+      c_7: -4604040569129139920
+      c_8: 4078496974052989320
+      c_9: -4420442394502915500
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
