@@ -11,10 +11,10 @@ public class GameStateManager : MonoBehaviour
 
     private void Start()
     {
-        SetupMainMenu();
+        OpenMainMenu();
     }
 
-    public void SetupMainMenu()
+    public void OpenMainMenu()
     {
         mainMenu.Show();
         mainMenu.Init();
@@ -24,33 +24,30 @@ public class GameStateManager : MonoBehaviour
         win.Hide();
     }
 
-    public void SetupGamePanel()
+    public void OpenGamePanel()
     {
         playing.Show();
-        playing.Init();
 
         mainMenu.Hide();
         lose.Hide();
         win.Hide();
     }
 
-    public void WinGame()
+    public void OpenWinPanel()
     {
         win.Show();
-        win.Init();
 
         playing.Hide();
-        lose.Show();
+        lose.Hide();
         mainMenu.Hide();
     }
 
-    public void LoseGame()
+    public void OpenLosePanel()
     {
         lose.Show();
-        lose.Init();
 
         playing.Hide();
-        win.Show();
+        win.Hide();
         mainMenu.Hide();
     }
 

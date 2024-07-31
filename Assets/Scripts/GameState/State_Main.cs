@@ -8,8 +8,7 @@ namespace FlipFlop
         [SerializeField] private Text levelNumberText;
         [SerializeField] private Button playButton;
 
-
-        public override void Init()
+        public void Init()
         {
             levelNumberText.text = $"Level {PlayerProfile.LevelIndex + 1}";
 
