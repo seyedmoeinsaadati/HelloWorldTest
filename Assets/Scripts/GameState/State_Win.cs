@@ -1,9 +1,20 @@
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace FlipFlop
 {
     public class State_Win : GameStateBase
     {
-        public override void Init()
+        [SerializeField] private Button homeButton;
+
+        private void Start()
         {
+            homeButton.onClick.AddListener(OnHomeClicked);
+        }
+
+        private void OnHomeClicked()
+        {
+            GameStateManager.Instance.OpenMainMenu();
         }
     }
 }

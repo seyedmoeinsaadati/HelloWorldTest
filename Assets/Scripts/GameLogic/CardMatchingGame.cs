@@ -16,7 +16,7 @@ public class CardMatchingGame : MonoBehaviour
     {
         GameInfo.Reset();
 
-        GameStateManager.Instance.SetupGamePanel();
+        GameStateManager.Instance.OpenGamePanel();
 
         // load level
         // load game board
@@ -25,11 +25,17 @@ public class CardMatchingGame : MonoBehaviour
 
     public static void GameFinished(bool winner)
     {
-        if (winner)
-            PlayerProfile.LevelIndex++;
-
         Clean();
-        GameStateManager.Instance.SetupMainMenu();
+
+        if (winner)
+        {
+            PlayerProfile.LevelIndex++;
+            GameStateManager.Instance.OpenWinPanel();
+        }
+        else
+        {
+            GameStateManager.Instance.OpenLosePanel();
+        }
     }
 
     public static void LoadLevel()
