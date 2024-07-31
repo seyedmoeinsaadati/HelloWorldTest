@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FileLoader : MonoBehaviour
 {
-    [SerializeField] private List<Level> levels = new();
+    [SerializeField] private List<LevelConfig> levels = new();
 
     private void Awake()
     {
@@ -14,7 +14,7 @@ public class FileLoader : MonoBehaviour
     ///////////////////////////////////////
     /// STATIC MEMEBERS
     ///////////////////////////////////////
-    public static Level GetLevel(int levelIndex)
+    public static LevelConfig GetLevel(int levelIndex)
     {
         if (instance != null)
         {
