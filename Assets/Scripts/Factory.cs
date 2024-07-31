@@ -2,7 +2,7 @@ using FlipFlop;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FileLoader : MonoBehaviour
+public class Factory : MonoBehaviour
 {
     [SerializeField] private List<LevelConfig> levels = new();
 
@@ -24,6 +24,6 @@ public class FileLoader : MonoBehaviour
         return null;
     }
 
-    private static FileLoader instance;
+    private static Factory instance;
 
 }
