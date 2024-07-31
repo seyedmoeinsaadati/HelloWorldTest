@@ -14,7 +14,6 @@ public class GameStateManager : MonoBehaviour
     {
         playing.gameObject.SetActive(true);
         playing.Init();
-
     }
 
     ///////////////////////////////////////
