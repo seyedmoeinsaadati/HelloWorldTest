@@ -11,6 +11,8 @@ namespace FlipFlop
 
         public override void Init()
         {
+            levelNumberText.text = $"Level {PlayerProfile.LevelIndex + 1}";
+
             playButton.onClick.AddListener(StartGame);
         }
 

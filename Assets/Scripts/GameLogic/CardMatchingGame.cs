@@ -25,8 +25,11 @@ public class CardMatchingGame : MonoBehaviour
 
     public static void GameFinished(bool winner)
     {
-        // save profile
-        // clear level
+        if (winner)
+            PlayerProfile.LevelIndex++;
+
+        Clean();
+        GameStateManager.Instance.SetupMainMenu();
     }
 
     public static void LoadLevel()
