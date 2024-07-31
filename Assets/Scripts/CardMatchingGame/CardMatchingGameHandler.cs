@@ -10,6 +10,11 @@ namespace FlipFlop
         [SerializeField] private Transform _cardContainer;
         [SerializeField] private Card _cardPrefab;
 
+        private void Awake()
+        {
+            _cardPrefab.gameObject.SetActive(false);
+        }
+
         ///////////////////////////////////////
         /// STATIC MEMEBERS
         ///////////////////////////////////////
@@ -26,6 +31,7 @@ namespace FlipFlop
             LoadLevel();
             Instance.gameManager.OpenGamePanel();
         }
+
         public static void Win()
         {
             Clean();
@@ -35,6 +41,7 @@ namespace FlipFlop
 
         public static void Lose()
         {
+            Clean();
             Instance.gameManager.OpenLosePanel();
         }
 
@@ -47,12 +54,20 @@ namespace FlipFlop
         public static void LoadLevel()
         {
             var config = Factory.GetLevel(GameInfo.levelNumber);
+
+            GameInfo.timer = config.timeLimit;
             GameInfo.time = config.timeLimit;
+
+#if UNITY_EDITOR
+            Debug.Log($"Level: {GameInfo.levelNumber}");
+            Debug.Log($"Card Counts: {config.numCard}");
+            Debug.Log($"Level Time: {config.timeLimit}");
+#endif
 
             // spawn cards
             Cards.Clear();
             Sprite[] cardSprites = Factory.Sprites.GetSprites(config.numCard);
-            for (int i = 0; i < cardSprites.Length; i++)
+            for (int i = 0; i < config.numCard; i++)
             {
                 var card = Instantiate(Instance._cardPrefab, Instance._cardContainer);
 
@@ -69,8 +84,10 @@ namespace FlipFlop
         /// </summary>
         public static void Clean()
         {
-            for (int i = Cards.Count - 1; i >= 0; i--)
-                Destroy(Cards[i]);
+            for (int i = 0; i < Cards.Count; i++)
+            {
+                Destroy(Cards[i].gameObject);
+            }
 
             Cards.Clear();
         }

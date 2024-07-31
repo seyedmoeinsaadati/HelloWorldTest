@@ -16,11 +16,23 @@ namespace FlipFlop
             cardImage.sprite = sprite;
 
             button.onClick.AddListener(OnCardClicked);
+
+            gameObject.SetActive(true);
         }
 
         public void OnCardClicked()
         {
             // TODO: ...
+        }
+
+        public void FlipUp()
+        {
+
+        }
+
+        public void FlipDown()
+        {
+
         }
 
 
