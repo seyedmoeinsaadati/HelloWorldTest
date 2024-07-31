@@ -15,7 +15,7 @@ namespace FlipFlop
 
         private void OnHomeClicked()
         {
-            GameStateManager.Instance.OpenMainMenu();
+            CardMatchingGameHandler.BackToMainMenu();
         }
     }
 }

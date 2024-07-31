@@ -1,10 +1,10 @@
 using FlipFlop;
-using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class CardMatchingGameHandler : MonoBehaviour
 {
     [Space]
+    [SerializeField] private GameStateManager gameManager;
     [SerializeField] private Transform _cardContainer;
     [SerializeField] private Card _cardPrefab;
 
@@ -18,28 +18,30 @@ public class CardMatchingGameHandler : MonoBehaviour
     {
         GameInfo.Reset();
 
-        GameStateManager.Instance.OpenGamePanel();
+        Instance.gameManager.OpenGamePanel();
 
         GameInfo.levelNumber = PlayerProfile.LevelIndex;
 
         LoadLevel();
-        GameStateManager.Instance.OpenGamePanel();
+        Instance.gameManager.OpenGamePanel();
     }
-
-    public static void GameFinished(bool winner)
+    public static void Win()
     {
         Clean();
-
-        if (winner)
-        {
-            PlayerProfile.LevelIndex++;
-            GameStateManager.Instance.OpenWinPanel();
-        }
-        else
-        {
-            GameStateManager.Instance.OpenLosePanel();
-        }
+        PlayerProfile.LevelIndex++;
+        Instance.gameManager.OpenWinPanel();
     }
+
+    public static void Lose()
+    {
+        Instance.gameManager.OpenLosePanel();
+    }
+
+    public static void BackToMainMenu()
+    {
+        Instance.gameManager.OpenMainMenu();
+    }
+
 
     public static void LoadLevel()
     {

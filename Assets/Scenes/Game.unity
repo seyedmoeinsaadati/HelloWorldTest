@@ -585,6 +585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f6273fc4500bdf479c34f6371ea55b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 540314807}
   _cardContainer: {fileID: 1397845155}
   _cardPrefab: {fileID: 1223911281}
 --- !u!114 &579436580

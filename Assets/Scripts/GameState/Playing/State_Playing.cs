@@ -11,6 +11,11 @@ namespace FlipFlop
             view.onHomeClicked += OnBackMenu;
         }
 
+        public void ResetPanel()
+        {
+            // view.Reset();
+        }
+
         public void UpdateTime()
         {
             // view.UpdateTime();
@@ -33,29 +38,42 @@ namespace FlipFlop
 
         public void OnBackMenu()
         {
-            GameStateManager.Instance.OpenMainMenu();
+            CardMatchingGameHandler.BackToMainMenu();
         }
+
 
         private void OnDestroy()
         {
             view.onHomeClicked -= OnBackMenu;
         }
 
-#if UNITY_EDITOR
 
-        // For test in editor (win/lose)
         private void Update()
         {
+
+            CheckTime();
+
+#if UNITY_EDITOR
+            // For test in editor (win/lose)
             if (Input.GetKeyUp(KeyCode.W))
             {
-                CardMatchingGameHandler.GameFinished(true);
+                CardMatchingGameHandler.Win();
             }
             else if (Input.GetKeyUp(KeyCode.Q))
             {
-                CardMatchingGameHandler.GameFinished(false);
+                CardMatchingGameHandler.Lose();
+            }
+#endif
+        }
+
+        private void CheckTime()
+        {
+            GameInfo.timer -= Time.deltaTime;
+
+            if (GameInfo.timer <= 0)
+            {
+                CardMatchingGameHandler.Lose();
             }
         }
-#endif
-
     }
 }

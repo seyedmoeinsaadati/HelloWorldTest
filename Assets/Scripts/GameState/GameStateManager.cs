@@ -50,30 +50,4 @@ public class GameStateManager : MonoBehaviour
         win.Hide();
         mainMenu.Hide();
     }
-
-
-    ///////////////////////////////////////
-    /// STATIC MEMEBERS
-    ///////////////////////////////////////
-
-    // Singleton pattern
-    private static GameStateManager instance;
-
-    public static GameStateManager Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = FindObjectOfType<GameStateManager>();
-                if (instance == null)
-                {
-                    instance = new GameObject().AddComponent<GameStateManager>();
-                    instance.gameObject.name = instance.GetType().Name;
-                }
-            }
-
-            return instance;
-        }
-    }
 }
