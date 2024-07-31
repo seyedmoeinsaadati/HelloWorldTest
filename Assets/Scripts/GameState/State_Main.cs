@@ -7,7 +7,7 @@ namespace FlipFlop
     {
         [SerializeField] private Text levelNumberText;
         [SerializeField] private Button playButton;
-      
+
 
         public override void Init()
         {
@@ -16,7 +16,7 @@ namespace FlipFlop
 
         public void StartGame()
         {
-            // ...
+            CardMatchingGame.StartGame();
         }
 
     }

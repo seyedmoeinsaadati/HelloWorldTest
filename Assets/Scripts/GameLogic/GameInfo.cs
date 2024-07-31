@@ -16,9 +16,7 @@ namespace FlipFlop
         public static int matchesCount;
         public static int turnCount;
 
-        public static GameLogicBase logic;
-
-        public static void Reset(GameLogicBase logic)
+        public static void Reset()
         {
             winner = false;
 
@@ -26,8 +24,6 @@ namespace FlipFlop
             timer = 0;
             matchesCount = 0;
             turnCount = 0;
-
-            GameInfo.logic = logic;
         }
     }
 }
