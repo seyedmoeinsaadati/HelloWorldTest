@@ -1,10 +1,11 @@
 using FlipFlop;
 using UnityEngine;
 
-public class CardMatchingGame : MonoBehaviour
+public class CardMatchingGameHandler : MonoBehaviour
 {
     [Space]
     [SerializeField] private Transform _cardContainer;
+    [SerializeField] private Card _cardPrefab;
 
     ///////////////////////////////////////
     /// STATIC MEMEBERS
@@ -18,6 +19,8 @@ public class CardMatchingGame : MonoBehaviour
 
         GameStateManager.Instance.OpenGamePanel();
 
+
+        GameInfo.levelNumber = PlayerProfile.LevelIndex;
         // load level
         // load game board
         // start game
@@ -52,17 +55,17 @@ public class CardMatchingGame : MonoBehaviour
     }
 
     // Singleton pattern
-    private static CardMatchingGame instance;
-    public static CardMatchingGame Instance
+    private static CardMatchingGameHandler instance;
+    public static CardMatchingGameHandler Instance
     {
         get
         {
             if (instance == null)
             {
-                instance = FindObjectOfType<CardMatchingGame>();
+                instance = FindObjectOfType<CardMatchingGameHandler>();
                 if (instance == null)
                 {
-                    instance = new GameObject().AddComponent<CardMatchingGame>();
+                    instance = new GameObject().AddComponent<CardMatchingGameHandler>();
                     instance.gameObject.name = instance.GetType().Name;
                 }
             }

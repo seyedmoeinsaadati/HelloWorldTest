@@ -48,11 +48,11 @@ namespace FlipFlop
         {
             if (Input.GetKeyUp(KeyCode.W))
             {
-                CardMatchingGame.GameFinished(true);
+                CardMatchingGameHandler.GameFinished(true);
             }
             else if (Input.GetKeyUp(KeyCode.Q))
             {
-                CardMatchingGame.GameFinished(false);
+                CardMatchingGameHandler.GameFinished(false);
             }
         }
 #endif

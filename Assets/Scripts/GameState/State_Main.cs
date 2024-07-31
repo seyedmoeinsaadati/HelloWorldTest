@@ -17,7 +17,7 @@ namespace FlipFlop
 
         public void StartGame()
         {
-            CardMatchingGame.StartGame();
+            CardMatchingGameHandler.StartGame();
         }
 
     }
