@@ -3,17 +3,28 @@ using UnityEngine;
 
 public class GameStateManager : MonoBehaviour
 {
+    [SerializeField] private State_Main mainMenu;
     [SerializeField] private State_Playing playing;
 
-    public void Start()
+    private void Start()
     {
-        SetupGamePanel();
+        SetupMainMenu();
+    }
+
+    public void SetupMainMenu()
+    {
+        mainMenu.Show();
+        mainMenu.Init();
+
+        playing.Hide();
     }
 
     public void SetupGamePanel()
     {
-        playing.gameObject.SetActive(true);
+        playing.Show();
         playing.Init();
+
+        mainMenu.Hide();
     }
 
     ///////////////////////////////////////
