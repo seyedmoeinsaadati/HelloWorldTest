@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace FlipFlop
@@ -9,5 +10,17 @@ namespace FlipFlop
         [SerializeField] private Text turnsText;
         [SerializeField] private Text matchesText;
         [SerializeField] private Button homeButton;
+
+        public event Action onHomeClicked;
+
+        public void Start()
+        {
+            homeButton.onClick.AddListener(OnClickHome);
+        }
+
+        private void OnClickHome()
+        {
+            onHomeClicked?.Invoke();
+        }
     }
 }

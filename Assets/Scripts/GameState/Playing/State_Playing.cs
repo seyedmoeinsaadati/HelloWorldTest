@@ -2,10 +2,14 @@ using UnityEngine;
 
 namespace FlipFlop
 {
-
     public class State_Playing : GameStateBase
     {
         [SerializeField] private StatePlaying_View view;
+
+        private void Start()
+        {
+            view.onHomeClicked += OnBackMenu;
+        }
 
         public override void Init()
         {
@@ -30,6 +34,16 @@ namespace FlipFlop
         public void OnCombo()
         {
             // TODO: combo effect
+        }
+
+        public void OnBackMenu()
+        {
+            GameStateManager.Instance.SetupMainMenu();
+        }
+
+        private void OnDestroy()
+        {
+            view.onHomeClicked -= OnBackMenu;
         }
 
     }
