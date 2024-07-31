@@ -13,6 +13,7 @@ namespace FlipFlop
         public void Setup(int id, Sprite sprite)
         {
             this.id = id;
+            name = "Card_" + id;
             cardImage.sprite = sprite;
 
             button.onClick.AddListener(OnCardClicked);

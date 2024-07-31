@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 namespace FlipFlop
 {
@@ -15,10 +17,58 @@ namespace FlipFlop
             _cardPrefab.gameObject.SetActive(false);
         }
 
+        private static void LoadLevel()
+        {
+#if UNITY_EDITOR
+            Debug.Log($"Level: {GameInfo.levelNumber}");
+            Debug.Log($"Card Counts: {Config.numCard}");
+            Debug.Log($"Level Time: {Config.timeLimit}");
+#endif
+
+            // spawn cards
+            Cards.Clear();
+            Sprite[] cardSprites = Factory.Sprites.GetSprites(Config.numCard / 2);
+            for (int spriteIndex = 0, cardId = 0; spriteIndex < Config.numCard / 2; spriteIndex++)
+            {
+                var card = Instantiate(Instance._cardPrefab, Instance._cardContainer);
+
+                if (card != null)
+                {
+                    card.Setup(cardId, cardSprites[spriteIndex]);
+                    Cards.Add(card);
+                }
+
+                card = Instantiate(Instance._cardPrefab, Instance._cardContainer);
+
+                if (card != null)
+                {
+                    card.Setup(cardId, cardSprites[spriteIndex]);
+                    Cards.Add(card);
+                }
+
+                cardId++;
+            }
+
+            // shuffle cards
+            foreach (var card in Cards)
+            {
+                card.transform.SetSiblingIndex(UnityEngine.Random.Range(0, Cards.Count));
+            }
+        }
+
+        private void Clean()
+        {
+            for (int i = 0; i < Cards.Count; i++)
+                Destroy(Cards[i].gameObject);
+
+            Cards.Clear();
+        }
+
         ///////////////////////////////////////
         /// STATIC MEMEBERS
         ///////////////////////////////////////
         private static List<Card> Cards = new();
+        private static LevelConfig Config;
 
         public static void StartGame()
         {
@@ -28,69 +78,35 @@ namespace FlipFlop
 
             GameInfo.levelNumber = PlayerProfile.LevelIndex;
 
+            Config = Factory.GetLevel(GameInfo.levelNumber);
+
+            GameInfo.timer = Config.timeLimit;
+            GameInfo.time = Config.timeLimit;
+
             LoadLevel();
             Instance.gameManager.OpenGamePanel();
         }
 
         public static void Win()
         {
-            Clean();
             PlayerProfile.LevelIndex++;
+
+            Instance.Clean();
             Instance.gameManager.OpenWinPanel();
         }
 
         public static void Lose()
         {
-            Clean();
+            Instance.Clean();
             Instance.gameManager.OpenLosePanel();
         }
 
         public static void BackToMainMenu()
         {
+            Instance.Clean();
             Instance.gameManager.OpenMainMenu();
         }
 
-
-        public static void LoadLevel()
-        {
-            var config = Factory.GetLevel(GameInfo.levelNumber);
-
-            GameInfo.timer = config.timeLimit;
-            GameInfo.time = config.timeLimit;
-
-#if UNITY_EDITOR
-            Debug.Log($"Level: {GameInfo.levelNumber}");
-            Debug.Log($"Card Counts: {config.numCard}");
-            Debug.Log($"Level Time: {config.timeLimit}");
-#endif
-
-            // spawn cards
-            Cards.Clear();
-            Sprite[] cardSprites = Factory.Sprites.GetSprites(config.numCard);
-            for (int i = 0; i < config.numCard; i++)
-            {
-                var card = Instantiate(Instance._cardPrefab, Instance._cardContainer);
-
-                if (card != null)
-                {
-                    card.Setup(i, cardSprites[i]);
-                    Cards.Add(card);
-                }
-            }
-        }
-
-        /// </summary>
-        /// Clean the playground after finishing level
-        /// </summary>
-        public static void Clean()
-        {
-            for (int i = 0; i < Cards.Count; i++)
-            {
-                Destroy(Cards[i].gameObject);
-            }
-
-            Cards.Clear();
-        }
 
         // Singleton pattern
         private static CardMatchingGameHandler instance;
