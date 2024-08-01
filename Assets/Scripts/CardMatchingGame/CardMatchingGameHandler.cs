@@ -27,26 +27,29 @@ namespace FlipFlop
 
             // spawn cards
             Cards.Clear();
-            Sprite[] cardSprites = Factory.Sprites.GetSprites(Config.numCard / 2);
-            for (int spriteIndex = 0, cardId = 0; spriteIndex < Config.numCard / 2; spriteIndex++)
+
+            int spriteCount = Config.numCard / 2;
+
+            Sprite[] cardSprites = Factory.Sprites.GetSprites(spriteCount);
+            for (int id = 0, index = 0; id < spriteCount; id++)
             {
                 var card = Instantiate(Instance._cardPrefab, Instance._cardContainer);
 
                 if (card != null)
                 {
-                    card.Setup(cardId, cardSprites[spriteIndex]);
+                    card.Setup(index, id, cardSprites[id]);
                     Cards.Add(card);
+                    index++;
                 }
 
                 card = Instantiate(Instance._cardPrefab, Instance._cardContainer);
 
                 if (card != null)
                 {
-                    card.Setup(cardId, cardSprites[spriteIndex]);
+                    card.Setup(index, id, cardSprites[id]);
                     Cards.Add(card);
+                    index++;
                 }
-
-                cardId++;
             }
 
             // shuffle cards

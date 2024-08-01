@@ -8,22 +8,26 @@ namespace FlipFlop
         [SerializeField] private Image cardImage;
         [SerializeField] private Button button;
 
-        private int id = -1;
+        private int id = -1; // based on image (there are only 2 card with same id)
+        private int index = 0; // index of card in list
 
-        public void Setup(int id, Sprite sprite)
+        private Sprite sprite;
+
+        public void Setup(int index, int id, Sprite sprite)
         {
+            this.index = index;
             this.id = id;
             name = "Card_" + id;
-            cardImage.sprite = sprite;
+            cardImage.sprite = null;
 
             button.onClick.AddListener(OnCardClicked);
 
             gameObject.SetActive(true);
         }
 
-        public void OnCardClicked()
+        private void OnCardClicked()
         {
-            // TODO: ...
+            // CardMatchingGameHandler.PickCard(id);
         }
 
         public void FlipUp()
