@@ -1,5 +1,5 @@
 using System;
-using Unity.VisualScripting;
+using UnityEngine.SocialPlatforms.Impl;
 
 namespace FlipFlop
 {
@@ -19,6 +19,13 @@ namespace FlipFlop
         public static int matchesCount;
         public static int turnCount;
         public static int comboCount;
+
+        public static int CalculateScore()
+        {
+            // write score formula here...
+            return (int)timer * 10 + comboCount;
+        }
+
 
         public static void Reset()
         {
