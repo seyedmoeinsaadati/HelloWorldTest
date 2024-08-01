@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Utils
 {
@@ -92,13 +90,13 @@ namespace Utils
 
         #region Fade
 
-        public static Coroutine DoFade(this MonoBehaviour self, Graphic target, float endValue, float duration, float delay,
+        public static Coroutine DoFade(this MonoBehaviour self, CanvasGroup target, float endValue, float duration, float delay,
             AnimationCurve ease, Action OnComplete = null)
         {
             return self.StartCoroutine(DOFadeRoutine(target, endValue, duration, delay, ease, OnComplete));
         }
 
-        private static IEnumerator DOFadeRoutine(Graphic target, float endValue, float duration, float delay,
+        private static IEnumerator DOFadeRoutine(CanvasGroup target, float endAlpha, float duration, float delay,
             AnimationCurve ease, Action OnComplete = null)
         {
             if (delay > 0)
@@ -107,18 +105,16 @@ namespace Utils
             }
 
             float epsilon = 0;
-            Color startColor = target.color;
-            Color endColor = startColor;
-            endColor.a = endValue;
+            float startAlpha = target.alpha;
             while (epsilon < duration)
             {
                 epsilon += Time.deltaTime;
                 float t = epsilon / duration;
-                target.color = Color.Lerp(startColor, endColor, ease.Evaluate(t));
+                target.alpha = Mathf.Lerp(startAlpha, endAlpha, ease.Evaluate(t));
                 yield return null;
             }
 
-            target.color = endColor;
+            target.alpha = endAlpha;
             OnComplete?.Invoke();
         }
 
