@@ -1,7 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils;
-using static Factory;
 
 namespace FlipFlop
 {
@@ -25,7 +25,9 @@ namespace FlipFlop
         public int Id => _id;
         public int Index => _index;
 
-        public void Setup(int index, int id, Sprite sprite)
+        private Action<Card> _onClick = null;
+
+        public Card Setup(int index, int id, Sprite sprite)
         {
             _index = index;
             _id = id;
@@ -36,11 +38,15 @@ namespace FlipFlop
 
             name = "Card_" + id;
             gameObject.SetActive(true);
+
+            return this;
         }
 
-        private void OnCardClicked()
+        public Card SetOnClick(Action<Card> onClick)
         {
-            // CardMatchingGameHandler.PickCard(id);
+            _onClick = onClick;
+
+            return this;
         }
 
         public void FlipUp()
@@ -67,6 +73,10 @@ namespace FlipFlop
             });
         }
 
+        private void OnCardClicked()
+        {
+            _onClick?.Invoke(this);
+        }
 
 #if UNITY_EDITOR
         private void Reset()

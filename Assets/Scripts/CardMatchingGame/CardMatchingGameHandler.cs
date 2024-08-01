@@ -1,23 +1,22 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 namespace FlipFlop
 {
-    public class CardMatchingGameHandler : MonoBehaviour
+    public partial class CardMatchingGameHandler : MonoBehaviour
     {
         [Space]
         [SerializeField] private GameStateManager gameManager;
         [SerializeField] private Transform _cardContainer;
         [SerializeField] private Card _cardPrefab;
 
+
         private void Awake()
         {
             _cardPrefab.gameObject.SetActive(false);
         }
 
-        private static void LoadLevel()
+        private void LoadLevel()
         {
 #if UNITY_EDITOR
             Debug.Log($"Level: {GameInfo.levelNumber}");
@@ -37,7 +36,9 @@ namespace FlipFlop
 
                 if (card != null)
                 {
-                    card.Setup(index, id, cardSprites[id]);
+                    card.Setup(index, id, cardSprites[id])
+                        .SetOnClick(PickCard);
+
                     Cards.Add(card);
                     index++;
                 }
@@ -46,7 +47,9 @@ namespace FlipFlop
 
                 if (card != null)
                 {
-                    card.Setup(index, id, cardSprites[id]);
+                    card.Setup(index, id, cardSprites[id])
+                        .SetOnClick(PickCard);
+
                     Cards.Add(card);
                     index++;
                 }
@@ -67,11 +70,53 @@ namespace FlipFlop
             Cards.Clear();
         }
 
+        private void PickCard(Card card)
+        {
+            if (firstGuess.Active && secondGuess.Active)
+            {
+                print("Too soon, wait a moment");
+                return;
+            }
+
+            if (!firstGuess.Active)
+            {
+                firstGuess.Set(card);
+            }
+            else if (!secondGuess.Active)
+            {
+                secondGuess.Set(card);
+
+                print("1st G is: " + firstGuess.Card.Id + ",2nd G is: " + secondGuess.Card.Id);
+
+                // Add to queue for compare guess
+            }
+        }
+
+        public void CheckMatch(MatchCardGuess firstGuess, MatchCardGuess secondGuess)
+        {
+            GameInfo.turnCount++;
+
+            if (firstGuess.Equals(secondGuess))
+            {
+                print("Correct Guess");
+                // Destroy cards
+                GameInfo.matchesCount++;
+            }
+            else
+            {
+                firstGuess.Reset();
+                secondGuess.Reset();
+            }
+        }
+
         ///////////////////////////////////////
         /// STATIC MEMEBERS
         ///////////////////////////////////////
         private static List<Card> Cards = new();
         private static LevelConfig Config;
+
+        public MatchCardGuess firstGuess, secondGuess;
+
 
         public static void StartGame()
         {
@@ -82,11 +127,10 @@ namespace FlipFlop
             GameInfo.levelNumber = PlayerProfile.LevelIndex;
 
             Config = Factory.GetLevel(GameInfo.levelNumber);
-
             GameInfo.timer = Config.timeLimit;
             GameInfo.time = Config.timeLimit;
 
-            LoadLevel();
+            Instance.LoadLevel();
             Instance.gameManager.OpenGamePanel();
         }
 
@@ -130,5 +174,6 @@ namespace FlipFlop
                 return instance;
             }
         }
+
     }
 }
