@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Utils;
+using static Factory;
 
 namespace FlipFlop
 {
@@ -28,11 +29,12 @@ namespace FlipFlop
         {
             _index = index;
             _id = id;
-            name = "Card_" + id;
-            cardImage.sprite = null;
+            _sprite = sprite;
 
+            cardImage.sprite = null;
             button.onClick.AddListener(OnCardClicked);
 
+            name = "Card_" + id;
             gameObject.SetActive(true);
         }
 
@@ -44,8 +46,6 @@ namespace FlipFlop
         public void FlipUp()
         {
             // TODO: Play sound
-
-            button.enabled = false;
 
             if (_rotatingCoroutine != null) StopCoroutine(_rotatingCoroutine);
             _rotatingCoroutine = this.DORotation(transform, new Vector3(0, 180, 0), .5f, .1f, flipCurve,
@@ -63,7 +63,6 @@ namespace FlipFlop
             _rotatingCoroutine = this.DORotation(transform, new Vector3(0, 0, 0), .5f, .1f, flipCurve,
             OnComplete: () =>
             {
-                button.enabled = true;
                 button.image.sprite = null;
             });
         }
