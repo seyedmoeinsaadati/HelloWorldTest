@@ -16,6 +16,7 @@ namespace FlipFlop
         public static float time = 0;
         public static int matchesCount;
         public static int turnCount;
+        public static int comboCount;
 
         public static void Reset()
         {
@@ -23,7 +24,7 @@ namespace FlipFlop
 
             levelNumber = -1;
             time = timer = 0;
-            matchesCount = turnCount = 0;
+            matchesCount = turnCount = comboCount = 0;
         }
     }
 }
