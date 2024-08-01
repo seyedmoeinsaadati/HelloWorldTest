@@ -1,4 +1,6 @@
-﻿namespace FlipFlop
+﻿using Unity.VisualScripting;
+
+namespace FlipFlop
 {
     [System.Serializable]
     public class MatchCardGuess
@@ -26,8 +28,11 @@
             _card = null;
         }
 
-        public void Clear()
+        public void Clean()
         {
+            UnityEngine.GameObject.Destroy(Card.gameObject);
+            _active = false;
+            _card = null;
         }
 
         public bool Equals(MatchCardGuess guess)

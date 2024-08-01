@@ -102,6 +102,7 @@ namespace FlipFlop
         {
             if (firstGuess.Equals(secondGuess))
             {
+                Debug.Log("Correct Guess");
                 // check combo
                 if (Mathf.Abs(Time.time - _lastCorrectTime) < .5f)
                 {
@@ -110,18 +111,23 @@ namespace FlipFlop
                     _OnCombo?.Invoke();
                 }
 
-
-                print("Correct Guess");
                 // Destroy cards
+                firstGuess.Clean();
+                secondGuess.Clean();
+
                 GameInfo.matchesCount++;
                 _lastCorrectTime = Time.time;
 
+                // check win condition
+            }
+            else
+            {
+                Debug.Log("Wrong Guess");
+                _FirstGuess.Reset();
+                _SecondGuess.Reset();
             }
 
-            firstGuess.Reset();
-            secondGuess.Reset();
             GameInfo.turnCount++;
-
             _OnMatchHappened?.Invoke();
         }
 
