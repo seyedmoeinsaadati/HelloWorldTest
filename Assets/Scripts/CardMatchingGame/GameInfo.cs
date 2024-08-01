@@ -13,6 +13,7 @@ namespace FlipFlop
         public static bool winner = false;
 
         public static float timer;
+        public static float time = 0;
         public static int matchesCount;
         public static int turnCount;
 
@@ -21,9 +22,8 @@ namespace FlipFlop
             winner = false;
 
             levelNumber = -1;
-            timer = 0;
-            matchesCount = 0;
-            turnCount = 0;
+            time = timer = 0;
+            matchesCount = turnCount = 0;
         }
     }
 }
