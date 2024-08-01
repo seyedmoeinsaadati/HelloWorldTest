@@ -22,7 +22,7 @@ namespace FlipFlop
         private string matchesFormat;
         private string comboFormat;
 
-        public void Start()
+        public void Awake()
         {
             homeButton.onClick.AddListener(OnClickHome);
 
