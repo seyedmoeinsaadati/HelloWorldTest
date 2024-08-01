@@ -1,10 +1,11 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace FlipFlop
 {
-    public partial class CardMatchingGameHandler : MonoBehaviour
+    public class CardMatchingGameHandler : MonoBehaviour
     {
         [Space]
         [SerializeField] private GameStateManager gameManager;
@@ -12,6 +13,8 @@ namespace FlipFlop
         [SerializeField] private Card _cardPrefab;
 
         private float _lastCorrectTime = 0;
+        private Coroutine guessCheckingCoroutine;
+        private GuessChecking checkingQueue;
 
         private void Awake()
         {
@@ -19,6 +22,7 @@ namespace FlipFlop
 
             _FirstGuess = new();
             _SecondGuess = new();
+            checkingQueue = new GuessChecking(CheckGuess);
         }
 
         private void LoadLevel()
@@ -65,6 +69,9 @@ namespace FlipFlop
             {
                 card.transform.SetSiblingIndex(UnityEngine.Random.Range(0, _Cards.Count));
             }
+
+
+            guessCheckingCoroutine = StartCoroutine(CheckingRoutine());
         }
 
         private void Clean()
@@ -77,12 +84,6 @@ namespace FlipFlop
 
         private void PickCard(Card card)
         {
-            if (_FirstGuess.Active && _SecondGuess.Active)
-            {
-                print("Too soon, wait a moment");
-                return;
-            }
-
             if (!_FirstGuess.Active)
             {
                 _FirstGuess.Set(card);
@@ -94,11 +95,11 @@ namespace FlipFlop
                 print("1st G is: " + _FirstGuess.Card.Id + ",2nd G is: " + _SecondGuess.Card.Id);
 
                 // Add to queue for compare guess
-                CheckMatch(_FirstGuess, _SecondGuess);
+                checkingQueue.Add(_FirstGuess, _SecondGuess);
             }
         }
 
-        public void CheckMatch(MatchCardGuess firstGuess, MatchCardGuess secondGuess)
+        private void CheckGuess(MatchCardGuess firstGuess, MatchCardGuess secondGuess)
         {
             if (firstGuess.Equals(secondGuess))
             {
@@ -129,6 +130,15 @@ namespace FlipFlop
 
             GameInfo.turnCount++;
             _OnMatchHappened?.Invoke();
+        }
+
+        private IEnumerator CheckingRoutine()
+        {
+            while (true)
+            {
+                yield return new WaitForSeconds(.5f);
+                checkingQueue.CheckRequest();
+            }
         }
 
         ///////////////////////////////////////
@@ -195,6 +205,34 @@ namespace FlipFlop
                 }
 
                 return instance;
+            }
+        }
+
+        ///////////////////////////////////////
+        /// HELPER CLASS
+        ///////////////////////////////////////
+        public class GuessChecking
+        {
+            private Queue<MatchCardGuess> _guesses = new();
+            private event Action<MatchCardGuess, MatchCardGuess> _onChecked = null;
+
+            public GuessChecking(Action<MatchCardGuess, MatchCardGuess> onCheck)
+            {
+                _onChecked = onCheck;
+            }
+
+            public void Add(MatchCardGuess firstGuess, MatchCardGuess secondGuess)
+            {
+                _guesses.Enqueue(firstGuess);
+                _guesses.Enqueue(secondGuess);
+            }
+
+            public void CheckRequest()
+            {
+                if (_guesses.Count >= 2)
+                {
+                    _onChecked?.Invoke(_guesses.Dequeue(), _guesses.Dequeue());
+                }
             }
         }
 

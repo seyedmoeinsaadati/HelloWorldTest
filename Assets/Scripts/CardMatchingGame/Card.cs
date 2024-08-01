@@ -9,6 +9,7 @@ namespace FlipFlop
     {
         [SerializeField] private Image cardImage;
         [SerializeField] private Button button;
+        [SerializeField] private CanvasGroup canvasGroup;
 
         [SerializeField] private AnimationCurve flipCurve = AnimationCurve.Linear(0, 0, 1, 1);
 
@@ -38,6 +39,9 @@ namespace FlipFlop
 
             name = "Card_" + id;
             gameObject.SetActive(true);
+
+            transform.localScale = Vector3.zero;
+            this.DoScale(transform, Vector3.one, .3f, .1f * index, flipCurve);
 
             return this;
         }
@@ -69,7 +73,7 @@ namespace FlipFlop
             _rotatingCoroutine = this.DORotation(transform, new Vector3(0, 0, 0), .5f, .1f, flipCurve,
             OnComplete: () =>
             {
-                button.image.sprite = null;
+                cardImage.sprite = null;
             });
         }
 
@@ -78,11 +82,17 @@ namespace FlipFlop
             _onClick?.Invoke(this);
         }
 
+        private void Destroy()
+        {
+            this.DoFade(canvasGroup, 0, .2f, .2f, flipCurve);
+        }
+
 #if UNITY_EDITOR
         private void Reset()
         {
             button = GetComponent<Button>();
             cardImage = GetComponent<Image>();
+            canvasGroup = GetComponent<CanvasGroup>();
         }
 #endif
     }
