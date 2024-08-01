@@ -138,7 +138,7 @@ namespace FlipFlop
         {
             while (true)
             {
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(1f);
                 checkingQueue.CheckRequest();
             }
         }

@@ -47,7 +47,11 @@ namespace FlipFlop
             transform.localScale = Vector3.zero;
             this.DoScale(transform, Vector3.one, .3f, .1f * index, flipCurve);
 
-            DelayCall(1, FlipBack);
+            DelayCall(1, () =>
+            {
+                button.enabled = true;
+                FlipBack();
+            });
 
             return this;
         }
@@ -75,11 +79,9 @@ namespace FlipFlop
         {
             // TODO: Play sound
 
-            // if (_rotatingCoroutine != null) StopCoroutine(_rotatingCoroutine);
             _rotatingCoroutine = this.DORotation(transform, new Vector3(0, 0, 0), flipDuration, 1, flipCurve,
             OnComplete: () =>
             {
-                button.enabled = true;
                 cardImage.sprite = null;
             });
         }
