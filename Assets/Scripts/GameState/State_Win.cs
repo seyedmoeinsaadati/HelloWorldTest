@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,6 +18,7 @@ namespace FlipFlop
 
         private void OnEnable()
         {
+            AudioEventHandler.PlayWin();
             UpdateStats();
         }
 

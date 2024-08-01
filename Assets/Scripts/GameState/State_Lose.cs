@@ -13,6 +13,12 @@ namespace FlipFlop
             homeButton.onClick.AddListener(OnHomeClicked);
         }
 
+        private void OnEnable()
+        {
+            AudioEventHandler.PlayLose();
+        }
+
+
         private void OnHomeClicked()
         {
             CardMatchingGameHandler.BackToMainMenu();
