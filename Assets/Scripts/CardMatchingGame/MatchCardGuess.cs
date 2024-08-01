@@ -3,13 +3,12 @@
     [System.Serializable]
     public class MatchCardGuess
     {
-        private bool _active;
-        private Card _card;
+        private bool _active = false;
+        private Card _card = null;
 
         public bool Active => _active;
 
         public Card Card => _card;
-
 
         public void Set(Card card)
         {
@@ -20,7 +19,9 @@
 
         public void Reset()
         {
-            _card.FlipBack();
+            if (_active)
+                _card.FlipBack();
+
             _active = false;
             _card = null;
         }
