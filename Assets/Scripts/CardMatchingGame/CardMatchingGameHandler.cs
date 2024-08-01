@@ -126,7 +126,7 @@ namespace FlipFlop
 
                 _OnGuessCorrect?.Invoke();
 
-                // TODO: check win condition
+                CheckWinCondition();
             }
             else
             {
@@ -137,6 +137,14 @@ namespace FlipFlop
             }
 
             GameInfo.turnCount++;
+        }
+
+        private void CheckWinCondition()
+        {
+            if (GameInfo.matchesCount == GameInfo.cardCount / 2)
+            {
+                DelayCall(1.5f, Win);
+            }
         }
 
         private IEnumerator CheckingRoutine()
