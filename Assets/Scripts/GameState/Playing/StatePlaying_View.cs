@@ -44,7 +44,7 @@ namespace FlipFlop
 
         public void UpdateTime(float value)
         {
-            timeText.text = string.Format(timeFormat, value.ToString("0.00"));
+            timeText.text = string.Format(timeFormat, value.ToString("0.0"));
         }
 
         public void UpdateTurns(int value)
@@ -64,6 +64,7 @@ namespace FlipFlop
 
         public void ResetView()
         {
+            levelNumberText.text = "";
             timeText.text = "";
             turnsText.text = "";
             matchesText.text = "";
