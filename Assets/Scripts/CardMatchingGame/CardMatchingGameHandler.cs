@@ -110,22 +110,16 @@ namespace FlipFlop
             if (firstGuess.Equals(secondGuess))
             {
                 Debug.Log("Correct Guess");
-                // check combo
-                if (Mathf.Abs(Time.time - _lastCorrectTime) < .5f)
-                {
-                    // COMBO...
-
-                    _OnCombo?.Invoke();
-                }
 
                 firstGuess.Clean();
                 secondGuess.Clean();
 
+                CheckCombo();
+
                 GameInfo.matchesCount++;
-                _lastCorrectTime = Time.time;
+                _lastCorrectTime = GameInfo.timer;
 
                 _OnGuessCorrect?.Invoke();
-
                 CheckWinCondition();
             }
             else
@@ -137,6 +131,17 @@ namespace FlipFlop
             }
 
             GameInfo.turnCount++;
+        }
+
+        private void CheckCombo()
+        {
+            if (Mathf.Abs(GameInfo.timer - _lastCorrectTime) < 5f)
+            {
+                Debug.Log("COMBOOOO");
+
+                GameInfo.comboCount++;
+                _OnCombo?.Invoke();
+            }
         }
 
         private void CheckWinCondition()
@@ -184,6 +189,7 @@ namespace FlipFlop
 
         public static void Win()
         {
+            GameInfo.playing = false;
             PlayerProfile.LevelIndex++;
 
             Instance.Clean();
@@ -192,6 +198,7 @@ namespace FlipFlop
 
         public static void Lose()
         {
+            GameInfo.playing = false;
             Instance.Clean();
             Instance.gameManager.OpenLosePanel();
         }

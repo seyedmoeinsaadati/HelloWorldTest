@@ -5,10 +5,6 @@ namespace FlipFlop
 {
     public static class GameInfo
     {
-        public static Action onStart = null;
-        public static Action onWin = null;
-        public static Action onLose = null;
-
         public static int levelNumber;
         public static bool winner = false;
         public static bool playing = false;
@@ -23,9 +19,8 @@ namespace FlipFlop
         public static int CalculateScore()
         {
             // write score formula here...
-            return (int)timer * 10 + comboCount;
+            return (int)timer * 10 + (comboCount * 10);
         }
-
 
         public static void Reset()
         {

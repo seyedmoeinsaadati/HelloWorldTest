@@ -24,15 +24,15 @@ namespace FlipFlop
             grid.constraintCount = rowCount;
 
             CardMatchingGameHandler._OnCombo += OnCombo;
-            CardMatchingGameHandler._OnGuessWrong += OnMatchHappened;
-            CardMatchingGameHandler._OnGuessWrong += OnMatchHappened;
+            CardMatchingGameHandler._OnGuessCorrect += OnMatches;
+            CardMatchingGameHandler._OnGuessWrong += OnTurn;
         }
 
         private void OnDisable()
         {
             CardMatchingGameHandler._OnCombo -= OnCombo;
-            CardMatchingGameHandler._OnGuessWrong -= OnMatchHappened;
-            CardMatchingGameHandler._OnGuessWrong -= OnMatchHappened;
+            CardMatchingGameHandler._OnGuessCorrect += OnMatches;
+            CardMatchingGameHandler._OnGuessWrong += OnTurn;
         }
 
         public void UpdateTime()
@@ -45,7 +45,7 @@ namespace FlipFlop
             view.UpdateMatches(GameInfo.matchesCount);
         }
 
-        public void OnMatchHappened()
+        public void OnTurn()
         {
             view.UpdateTurns(GameInfo.turnCount);
         }
@@ -107,12 +107,12 @@ namespace FlipFlop
 
         private IEnumerator ResetRoutine()
         {
-            yield return null;
             view.UpdateLevel(GameInfo.levelNumber);
             view.UpdateTime(0);
             view.UpdateTurns(0);
             view.UpdateMatches(0);
             view.UpdateCombo(0);
+            yield return null;
         }
     }
 }

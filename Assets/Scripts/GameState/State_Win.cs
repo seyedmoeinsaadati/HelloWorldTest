@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,30 +8,30 @@ namespace FlipFlop
     public class State_Win : GameStateBase
     {
         [SerializeField] private Button homeButton;
-        [SerializeField] private Text scoreText;
+        [SerializeField] private Text statText;
 
-        private string _scoreFormat;
+        private string _statFormat;
 
-        private void Start()
+        private void Awake()
         {
             homeButton.onClick.AddListener(OnHomeClicked);
-
-            _scoreFormat = scoreText.text;
+            _statFormat = statText.text;
         }
 
         private void OnEnable()
         {
-            UdpateScore();
-        }
-
-        private void UdpateScore()
-        {
-            scoreText.text = string.Format(_scoreFormat, GameInfo.CalculateScore());
+            UpdateStats();
         }
 
         private void OnHomeClicked()
         {
             CardMatchingGameHandler.BackToMainMenu();
+        }
+
+        private void UpdateStats()
+        {
+            int score = GameInfo.CalculateScore();
+            statText.text = string.Format(_statFormat, (int)GameInfo.timer, GameInfo.comboCount, score);
         }
     }
 }
