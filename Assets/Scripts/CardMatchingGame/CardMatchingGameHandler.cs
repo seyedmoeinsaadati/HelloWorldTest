@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace FlipFlop
 {
-    public class CardMatchingGameHandler : MonoBehaviour
+    public class CardMatchingGameHandler : MonoBase
     {
         [Space]
         [SerializeField] private GameStateManager gameManager;
@@ -70,8 +70,12 @@ namespace FlipFlop
                 card.transform.SetSiblingIndex(UnityEngine.Random.Range(0, _Cards.Count));
             }
 
-
             guessCheckingCoroutine = StartCoroutine(CheckingRoutine());
+
+            DelayCall(2, () =>
+            {
+                GameInfo.playing = true;
+            });
         }
 
         private void Clean()
@@ -114,24 +118,25 @@ namespace FlipFlop
                     _OnCombo?.Invoke();
                 }
 
-                // Destroy cards
                 firstGuess.Clean();
                 secondGuess.Clean();
 
                 GameInfo.matchesCount++;
                 _lastCorrectTime = Time.time;
 
-                // check win condition
+                _OnGuessCorrect?.Invoke();
+
+                // TODO: check win condition
             }
             else
             {
                 Debug.Log("Wrong Guess");
                 _FirstGuess.Reset();
                 _SecondGuess.Reset();
+                _OnGuessWrong?.Invoke();
             }
 
             GameInfo.turnCount++;
-            _OnMatchHappened?.Invoke();
         }
 
         private IEnumerator CheckingRoutine()
@@ -150,23 +155,23 @@ namespace FlipFlop
         private static LevelConfig _Config;
         private MatchCardGuess _FirstGuess, _SecondGuess;
 
-        private static Action _OnCombo = null;
-        private static Action _OnMatchHappened = null;
+        public static event Action _OnCombo = null;
+        public static event Action _OnGuessCorrect = null;
+        public static event Action _OnGuessWrong = null;
 
         public static void StartGame()
         {
             GameInfo.Reset();
-
-            Instance.gameManager.OpenGamePanel();
-
-            GameInfo.levelNumber = PlayerProfile.LevelIndex;
+            GameInfo.levelNumber = PlayerProfile.LevelIndex + 1;
 
             _Config = Factory.GetLevel(GameInfo.levelNumber);
             GameInfo.timer = _Config.timeLimit;
             GameInfo.time = _Config.timeLimit;
+            GameInfo.cardCount = _Config.numCard;
+
+            Instance.gameManager.OpenGamePanel();
 
             Instance.LoadLevel();
-            Instance.gameManager.OpenGamePanel();
         }
 
         public static void Win()
