@@ -65,7 +65,7 @@ namespace FlipFlop
 
         public void FlipUp()
         {
-            // TODO: Play sound
+            AudioEventHandler.PlayCardFlipUp();
 
             if (_rotatingCoroutine != null) StopCoroutine(_rotatingCoroutine);
             _rotatingCoroutine = this.DORotation(transform, new Vector3(0, 180, 0), flipDuration, flipDelay, flipCurve,
@@ -77,7 +77,7 @@ namespace FlipFlop
 
         public void FlipBack()
         {
-            // TODO: Play sound
+            AudioEventHandler.PlayCardFlipBack();
 
             _rotatingCoroutine = this.DORotation(transform, new Vector3(0, 0, 0), flipDuration, 1, flipCurve,
             OnComplete: () =>
