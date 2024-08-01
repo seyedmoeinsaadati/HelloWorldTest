@@ -114,24 +114,25 @@ namespace FlipFlop
                     _OnCombo?.Invoke();
                 }
 
-                // Destroy cards
                 firstGuess.Clean();
                 secondGuess.Clean();
 
                 GameInfo.matchesCount++;
                 _lastCorrectTime = Time.time;
 
-                // check win condition
+                _OnGuessCorrect?.Invoke();
+
+                // TODO: check win condition
             }
             else
             {
                 Debug.Log("Wrong Guess");
                 _FirstGuess.Reset();
                 _SecondGuess.Reset();
+                _OnGuessWrong?.Invoke();
             }
 
             GameInfo.turnCount++;
-            _OnMatchHappened?.Invoke();
         }
 
         private IEnumerator CheckingRoutine()
@@ -150,8 +151,9 @@ namespace FlipFlop
         private static LevelConfig _Config;
         private MatchCardGuess _FirstGuess, _SecondGuess;
 
-        private static Action _OnCombo = null;
-        private static Action _OnMatchHappened = null;
+        public static event Action _OnCombo = null;
+        public static event Action _OnGuessCorrect = null;
+        public static event Action _OnGuessWrong = null;
 
         public static void StartGame()
         {

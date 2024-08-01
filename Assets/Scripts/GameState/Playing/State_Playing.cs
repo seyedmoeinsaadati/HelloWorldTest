@@ -13,26 +13,31 @@ namespace FlipFlop
 
         public void ResetPanel()
         {
-            // view.Reset();
+            view.ResetView();
+
+            CardMatchingGameHandler._OnCombo += OnCombo;
+            CardMatchingGameHandler._OnGuessWrong += OnMatchHappened;
+            CardMatchingGameHandler._OnGuessWrong += OnMatchHappened;
         }
 
         public void UpdateTime()
         {
-            // view.UpdateTime();
+            view.UpdateTime(GameInfo.timer);
         }
 
         public void OnMatches()
         {
-            // view.UpdateMatches();
+            view.UpdateMatches(GameInfo.matchesCount);
         }
 
-        public void OnTurnComplete()
+        public void OnMatchHappened()
         {
-            // view.UpdateTurns();
+            view.UpdateTurns(GameInfo.turnCount);
         }
 
         public void OnCombo()
         {
+            view.UpdateCombo(GameInfo.comboCount);
             // TODO: combo effect
         }
 
@@ -74,6 +79,8 @@ namespace FlipFlop
             {
                 CardMatchingGameHandler.Lose();
             }
+
+            UpdateTime();
         }
     }
 }
