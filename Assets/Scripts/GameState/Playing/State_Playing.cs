@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 namespace FlipFlop
 {
+
     public class State_Playing : GameStateBase
     {
         [SerializeField] private StatePlaying_View view;
@@ -42,6 +43,7 @@ namespace FlipFlop
 
         public void OnMatches()
         {
+            AudioEventHandler.PlayCorrectGuess();
             view.UpdateMatches(GameInfo.matchesCount);
         }
 
