@@ -5,12 +5,15 @@ using Utils;
 
 namespace FlipFlop
 {
-    public class Card : MonoBehaviour
+    public class Card : MonoBase
     {
         [SerializeField] private Image cardImage;
         [SerializeField] private Button button;
         [SerializeField] private CanvasGroup canvasGroup;
 
+        [Header("Transition Propeerties")]
+        [SerializeField] private float flipDuration = .5f;
+        [SerializeField] private float flipDelay = .1f;
         [SerializeField] private AnimationCurve flipCurve = AnimationCurve.Linear(0, 0, 1, 1);
 
         // based on image (there are only 2 card with same id)
@@ -34,14 +37,17 @@ namespace FlipFlop
             _id = id;
             _sprite = sprite;
 
-            cardImage.sprite = null;
+            cardImage.sprite = sprite;
             button.onClick.AddListener(OnCardClicked);
 
             name = "Card_" + id;
             gameObject.SetActive(true);
 
+            button.enabled = false;
             transform.localScale = Vector3.zero;
             this.DoScale(transform, Vector3.one, .3f, .1f * index, flipCurve);
+
+            DelayCall(1, FlipBack);
 
             return this;
         }
@@ -58,7 +64,7 @@ namespace FlipFlop
             // TODO: Play sound
 
             if (_rotatingCoroutine != null) StopCoroutine(_rotatingCoroutine);
-            _rotatingCoroutine = this.DORotation(transform, new Vector3(0, 180, 0), .5f, .1f, flipCurve,
+            _rotatingCoroutine = this.DORotation(transform, new Vector3(0, 180, 0), flipDuration, flipDelay, flipCurve,
             OnComplete: () =>
             {
                 cardImage.sprite = _sprite;
@@ -69,10 +75,11 @@ namespace FlipFlop
         {
             // TODO: Play sound
 
-            if (_rotatingCoroutine != null) StopCoroutine(_rotatingCoroutine);
-            _rotatingCoroutine = this.DORotation(transform, new Vector3(0, 0, 0), .5f, .1f, flipCurve,
+            // if (_rotatingCoroutine != null) StopCoroutine(_rotatingCoroutine);
+            _rotatingCoroutine = this.DORotation(transform, new Vector3(0, 0, 0), flipDuration, 1, flipCurve,
             OnComplete: () =>
             {
+                button.enabled = true;
                 cardImage.sprite = null;
             });
         }
@@ -82,9 +89,9 @@ namespace FlipFlop
             _onClick?.Invoke(this);
         }
 
-        private void Destroy()
+        public void FadeOut()
         {
-            this.DoFade(canvasGroup, 0, .2f, .2f, flipCurve);
+            this.DoFade(canvasGroup, 0, .2f, 1f, flipCurve);
         }
 
 #if UNITY_EDITOR
