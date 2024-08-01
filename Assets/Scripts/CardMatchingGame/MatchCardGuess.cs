@@ -30,7 +30,7 @@ namespace FlipFlop
 
         public void Clean()
         {
-            UnityEngine.GameObject.Destroy(Card.gameObject);
+            _card.FadeOut();
             _active = false;
             _card = null;
         }

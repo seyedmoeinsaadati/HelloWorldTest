@@ -76,6 +76,8 @@ namespace FlipFlop
 
         private void Clean()
         {
+            StopCoroutine(guessCheckingCoroutine);
+
             for (int i = 0; i < _Cards.Count; i++)
                 Destroy(_Cards[i].gameObject);
 
@@ -92,8 +94,6 @@ namespace FlipFlop
             {
                 _SecondGuess.Set(card);
 
-                print("1st G is: " + _FirstGuess.Card.Id + ",2nd G is: " + _SecondGuess.Card.Id);
-
                 // Add to queue for compare guess
                 checkingQueue.Add(_FirstGuess, _SecondGuess);
             }
@@ -101,6 +101,8 @@ namespace FlipFlop
 
         private void CheckGuess(MatchCardGuess firstGuess, MatchCardGuess secondGuess)
         {
+            Debug.Log($"Checking: {_FirstGuess.Card.Id} and {_SecondGuess.Card.Id}");
+
             if (firstGuess.Equals(secondGuess))
             {
                 Debug.Log("Correct Guess");
@@ -136,7 +138,7 @@ namespace FlipFlop
         {
             while (true)
             {
-                yield return new WaitForSeconds(.5f);
+                yield return new WaitForSeconds(2f);
                 checkingQueue.CheckRequest();
             }
         }
