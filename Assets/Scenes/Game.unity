@@ -572,7 +572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915fa54ddaf6ddb49bfcc8e773a8227f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startLevelIndex: 0
+  startLevelIndex: 5
 --- !u!114 &579436579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1619,6 +1619,7 @@ GameObject:
   - component: {fileID: 1223911280}
   - component: {fileID: 1223911279}
   - component: {fileID: 1223911278}
+  - component: {fileID: 1223911282}
   - component: {fileID: 1223911281}
   m_Layer: 5
   m_Name: TempCard
@@ -1744,6 +1745,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardImage: {fileID: 1579348130}
   button: {fileID: 1223911278}
+  canvasGroup: {fileID: 1223911282}
+  flipCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!225 &1223911282
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223911276}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1229700303
 GameObject:
   m_ObjectHideFlags: 0
