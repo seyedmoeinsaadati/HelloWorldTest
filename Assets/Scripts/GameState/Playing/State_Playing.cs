@@ -1,23 +1,36 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace FlipFlop
 {
     public class State_Playing : GameStateBase
     {
         [SerializeField] private StatePlaying_View view;
+        [SerializeField] private GridLayoutGroup grid;
 
         private void Start()
         {
             view.onHomeClicked += OnBackMenu;
         }
 
-        public void ResetPanel()
+        private void OnEnable()
         {
-            view.ResetView();
+            ResetView();
+
+            grid.constraint = GridLayoutGroup.Constraint.FixedRowCount;
+            grid.constraintCount = Mathf.FloorToInt(Mathf.Sqrt(GameInfo.cardCount));
 
             CardMatchingGameHandler._OnCombo += OnCombo;
             CardMatchingGameHandler._OnGuessWrong += OnMatchHappened;
             CardMatchingGameHandler._OnGuessWrong += OnMatchHappened;
+        }
+
+        private void OnDisable()
+        {
+            CardMatchingGameHandler._OnCombo -= OnCombo;
+            CardMatchingGameHandler._OnGuessWrong -= OnMatchHappened;
+            CardMatchingGameHandler._OnGuessWrong -= OnMatchHappened;
         }
 
         public void UpdateTime()
@@ -46,18 +59,20 @@ namespace FlipFlop
             CardMatchingGameHandler.BackToMainMenu();
         }
 
-
         private void OnDestroy()
         {
             view.onHomeClicked -= OnBackMenu;
         }
 
-
         private void Update()
         {
 
-            CheckTime();
+            if (GameInfo.playing)
+            {
 
+                CheckTime();
+
+            }
 #if UNITY_EDITOR
             // For test in editor (win/lose)
             if (Input.GetKeyUp(KeyCode.W))
@@ -81,6 +96,21 @@ namespace FlipFlop
             }
 
             UpdateTime();
+        }
+
+        public void ResetView()
+        {
+            StartCoroutine(ResetRoutine());
+        }
+
+        private IEnumerator ResetRoutine()
+        {
+            yield return null;
+            view.UpdateLevel(GameInfo.levelNumber);
+            view.UpdateTime(0);
+            view.UpdateTurns(0);
+            view.UpdateMatches(0);
+            view.UpdateCombo(0);
         }
     }
 }

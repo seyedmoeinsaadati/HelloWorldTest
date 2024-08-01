@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,6 +26,7 @@ namespace FlipFlop
         {
             homeButton.onClick.AddListener(OnClickHome);
 
+            levelNumberFormat = levelNumberText.text;
             timeFormat = timeText.text;
             turnsFormat = turnsText.text;
             matchesFormat = matchesText.text;
@@ -35,7 +37,6 @@ namespace FlipFlop
         {
             onHomeClicked?.Invoke();
         }
-
 
         public void UpdateLevel(int value)
         {
@@ -60,15 +61,6 @@ namespace FlipFlop
         public void UpdateCombo(int value)
         {
             comboText.text = string.Format(comboFormat, value);
-        }
-
-        public void ResetView()
-        {
-            levelNumberText.text = "";
-            timeText.text = "";
-            turnsText.text = "";
-            matchesText.text = "";
-            comboText.text = "";
         }
     }
 }

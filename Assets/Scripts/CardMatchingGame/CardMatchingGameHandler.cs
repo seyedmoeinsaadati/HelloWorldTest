@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace FlipFlop
 {
-    public class CardMatchingGameHandler : MonoBehaviour
+    public class CardMatchingGameHandler : MonoBase
     {
         [Space]
         [SerializeField] private GameStateManager gameManager;
@@ -70,8 +70,12 @@ namespace FlipFlop
                 card.transform.SetSiblingIndex(UnityEngine.Random.Range(0, _Cards.Count));
             }
 
-
             guessCheckingCoroutine = StartCoroutine(CheckingRoutine());
+
+            DelayCall(2, () =>
+            {
+                GameInfo.playing = true;
+            });
         }
 
         private void Clean()
@@ -158,17 +162,16 @@ namespace FlipFlop
         public static void StartGame()
         {
             GameInfo.Reset();
-
-            Instance.gameManager.OpenGamePanel();
-
-            GameInfo.levelNumber = PlayerProfile.LevelIndex;
+            GameInfo.levelNumber = PlayerProfile.LevelIndex + 1;
 
             _Config = Factory.GetLevel(GameInfo.levelNumber);
             GameInfo.timer = _Config.timeLimit;
             GameInfo.time = _Config.timeLimit;
+            GameInfo.cardCount = _Config.numCard;
+
+            Instance.gameManager.OpenGamePanel();
 
             Instance.LoadLevel();
-            Instance.gameManager.OpenGamePanel();
         }
 
         public static void Win()

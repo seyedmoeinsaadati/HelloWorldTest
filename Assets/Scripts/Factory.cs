@@ -17,11 +17,11 @@ public class Factory : MonoBehaviour
     ///////////////////////////////////////
     private static Factory instance;
 
-    public static LevelConfig GetLevel(int levelIndex)
+    public static LevelConfig GetLevel(int levelNumber)
     {
         if (instance != null)
         {
-            return instance.levels[levelIndex % instance.levels.Count];
+            return instance.levels[(levelNumber - 1) % instance.levels.Count];
         }
 
         return null;

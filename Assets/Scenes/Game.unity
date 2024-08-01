@@ -1253,7 +1253,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 0}
+  m_BackGroundColor: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3109,6 +3109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   view: {fileID: 2102721369}
+  grid: {fileID: 1397845156}
 --- !u!114 &2102721369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3121,7 +3122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d042697842aae4b8a9c32e681304dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNumberText: {fileID: 0}
+  levelNumberText: {fileID: 1631373810}
   timeText: {fileID: 1229700305}
   turnsText: {fileID: 890114309}
   matchesText: {fileID: 1634516501}

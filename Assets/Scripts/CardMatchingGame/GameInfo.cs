@@ -11,16 +11,18 @@ namespace FlipFlop
 
         public static int levelNumber;
         public static bool winner = false;
+        public static bool playing = false;
 
         public static float timer;
         public static float time = 0;
+        public static float cardCount = 0;
         public static int matchesCount;
         public static int turnCount;
         public static int comboCount;
 
         public static void Reset()
         {
-            winner = false;
+            playing = winner = false;
 
             levelNumber = -1;
             time = timer = 0;
