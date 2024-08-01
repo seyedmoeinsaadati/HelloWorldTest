@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,24 +11,28 @@ namespace FlipFlop
         [SerializeField] private Transform _cardContainer;
         [SerializeField] private Card _cardPrefab;
 
+        private float _lastCorrectTime = 0;
 
         private void Awake()
         {
             _cardPrefab.gameObject.SetActive(false);
+
+            _FirstGuess = new();
+            _SecondGuess = new();
         }
 
         private void LoadLevel()
         {
 #if UNITY_EDITOR
             Debug.Log($"Level: {GameInfo.levelNumber}");
-            Debug.Log($"Card Counts: {Config.numCard}");
-            Debug.Log($"Level Time: {Config.timeLimit}");
+            Debug.Log($"Card Counts: {_Config.numCard}");
+            Debug.Log($"Level Time: {_Config.timeLimit}");
 #endif
 
             // spawn cards
-            Cards.Clear();
+            _Cards.Clear();
 
-            int spriteCount = Config.numCard / 2;
+            int spriteCount = _Config.numCard / 2;
 
             Sprite[] cardSprites = Factory.Sprites.GetSprites(spriteCount);
             for (int id = 0, index = 0; id < spriteCount; id++)
@@ -39,7 +44,7 @@ namespace FlipFlop
                     card.Setup(index, id, cardSprites[id])
                         .SetOnClick(PickCard);
 
-                    Cards.Add(card);
+                    _Cards.Add(card);
                     index++;
                 }
 
@@ -50,73 +55,85 @@ namespace FlipFlop
                     card.Setup(index, id, cardSprites[id])
                         .SetOnClick(PickCard);
 
-                    Cards.Add(card);
+                    _Cards.Add(card);
                     index++;
                 }
             }
 
             // shuffle cards
-            foreach (var card in Cards)
+            foreach (var card in _Cards)
             {
-                card.transform.SetSiblingIndex(UnityEngine.Random.Range(0, Cards.Count));
+                card.transform.SetSiblingIndex(UnityEngine.Random.Range(0, _Cards.Count));
             }
         }
 
         private void Clean()
         {
-            for (int i = 0; i < Cards.Count; i++)
-                Destroy(Cards[i].gameObject);
+            for (int i = 0; i < _Cards.Count; i++)
+                Destroy(_Cards[i].gameObject);
 
-            Cards.Clear();
+            _Cards.Clear();
         }
 
         private void PickCard(Card card)
         {
-            if (firstGuess.Active && secondGuess.Active)
+            if (_FirstGuess.Active && _SecondGuess.Active)
             {
                 print("Too soon, wait a moment");
                 return;
             }
 
-            if (!firstGuess.Active)
+            if (!_FirstGuess.Active)
             {
-                firstGuess.Set(card);
+                _FirstGuess.Set(card);
             }
-            else if (!secondGuess.Active)
+            else if (!_SecondGuess.Active)
             {
-                secondGuess.Set(card);
+                _SecondGuess.Set(card);
 
-                print("1st G is: " + firstGuess.Card.Id + ",2nd G is: " + secondGuess.Card.Id);
+                print("1st G is: " + _FirstGuess.Card.Id + ",2nd G is: " + _SecondGuess.Card.Id);
 
                 // Add to queue for compare guess
+                CheckMatch(_FirstGuess, _SecondGuess);
             }
         }
 
         public void CheckMatch(MatchCardGuess firstGuess, MatchCardGuess secondGuess)
         {
-            GameInfo.turnCount++;
-
             if (firstGuess.Equals(secondGuess))
             {
+                // check combo
+                if (Mathf.Abs(Time.time - _lastCorrectTime) < .5f)
+                {
+                    // COMBO...
+
+                    _OnCombo?.Invoke();
+                }
+
+
                 print("Correct Guess");
                 // Destroy cards
                 GameInfo.matchesCount++;
+                _lastCorrectTime = Time.time;
+
             }
-            else
-            {
-                firstGuess.Reset();
-                secondGuess.Reset();
-            }
+
+            firstGuess.Reset();
+            secondGuess.Reset();
+            GameInfo.turnCount++;
+
+            _OnMatchHappened?.Invoke();
         }
 
         ///////////////////////////////////////
         /// STATIC MEMEBERS
         ///////////////////////////////////////
-        private static List<Card> Cards = new();
-        private static LevelConfig Config;
+        private static List<Card> _Cards = new();
+        private static LevelConfig _Config;
+        private MatchCardGuess _FirstGuess, _SecondGuess;
 
-        public MatchCardGuess firstGuess, secondGuess;
-
+        private static Action _OnCombo = null;
+        private static Action _OnMatchHappened = null;
 
         public static void StartGame()
         {
@@ -126,9 +143,9 @@ namespace FlipFlop
 
             GameInfo.levelNumber = PlayerProfile.LevelIndex;
 
-            Config = Factory.GetLevel(GameInfo.levelNumber);
-            GameInfo.timer = Config.timeLimit;
-            GameInfo.time = Config.timeLimit;
+            _Config = Factory.GetLevel(GameInfo.levelNumber);
+            GameInfo.timer = _Config.timeLimit;
+            GameInfo.time = _Config.timeLimit;
 
             Instance.LoadLevel();
             Instance.gameManager.OpenGamePanel();
