@@ -403,6 +403,8 @@ MonoBehaviour:
   cardFlipBack: {fileID: 8300000, guid: d0565d8cd33fd804093f811c6accd81d, type: 3}
   cardFlipUp: {fileID: 8300000, guid: 0805bae619e264b4abfb13b962ce1729, type: 3}
   guessCorrect: {fileID: 8300000, guid: 5b6363596d076a7489c04ebaebd211b4, type: 3}
+  win: {fileID: 8300000, guid: 19c4bbed341b26a45b3a68e1eda3727d, type: 3}
+  lose: {fileID: 8300000, guid: be78a66ef13423b489f728dae240803f, type: 3}
 --- !u!1 &540314802
 GameObject:
   m_ObjectHideFlags: 0
