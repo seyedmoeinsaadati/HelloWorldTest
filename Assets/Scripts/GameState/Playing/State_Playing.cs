@@ -19,7 +19,9 @@ namespace FlipFlop
             ResetView();
 
             grid.constraint = GridLayoutGroup.Constraint.FixedRowCount;
-            grid.constraintCount = Mathf.FloorToInt(Mathf.Sqrt(GameInfo.cardCount));
+            int rowCount = Mathf.FloorToInt(Mathf.Sqrt(GameInfo.cardCount));
+            rowCount = Mathf.Clamp(rowCount, 1, 4);
+            grid.constraintCount = rowCount;
 
             CardMatchingGameHandler._OnCombo += OnCombo;
             CardMatchingGameHandler._OnGuessWrong += OnMatchHappened;
