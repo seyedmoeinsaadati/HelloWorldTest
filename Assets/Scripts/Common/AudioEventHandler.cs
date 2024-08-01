@@ -10,6 +10,8 @@ namespace FlipFlop
         [SerializeField] private AudioClip cardFlipBack;
         [SerializeField] private AudioClip cardFlipUp;
         [SerializeField] private AudioClip guessCorrect;
+        [SerializeField] private AudioClip win;
+        [SerializeField] private AudioClip lose;
 
         private void Awake()
         {
@@ -50,5 +52,21 @@ namespace FlipFlop
 
             instance.audioSource.PlayOneShot(instance.uiClickSound);
         }
+
+        public static void PlayWin()
+        {
+            if (instance == null) return;
+
+            instance.audioSource.PlayOneShot(instance.win);
+        }
+
+        public static void PlayLose()
+        {
+            if (instance == null) return;
+
+            instance.audioSource.PlayOneShot(instance.lose);
+        }
+
+
     }
 }
